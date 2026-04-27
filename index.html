@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Remains - Digital Memory Wall</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🕯️ My Remains</h1>
+            <p>A Digital Memory Wall - Leave a Tile to Honor a Memory</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Add Your Tile</h2>
+                <form id="tileForm">
+                    <div class="form-group">
+                        <label for="name">Name or Memory</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter a name or memory"
+                            maxlength="50"
+                            required
+                        >
+                        <small>Max 50 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Share your thoughts or wishes..."
+                            maxlength="200"
+                            rows="4"
+                            required
+                        ></textarea>
+                        <small><span id="charCount">0</span>/200 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input 
+                            type="date" 
+                            id="date" 
+                            name="date"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-btn">Add Tile</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </section>
+
+        <!-- Grid Section -->
+        <section class="grid-section">
+            <h2>Memory Wall</h2>
+            <div id="tilesGrid" class="tiles-grid">
+                <!-- Tiles will be dynamically inserted here -->
+            </div>
+            <div id="loadingMessage" class="loading">Loading memories...</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Remains. A forever-free memorial.</p>
+    </footer>
+
+    <!-- Supabase JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
